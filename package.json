@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "build:prod": "ng build --prod",
-    "build:pub": "ng build --prod --output-path docs --base-href https://jgcarballa.github.io/Sprint-W1/",
+    "build:pub": "ng build --prod --output-path docs --base-href https://jgcarballa.github.io/sprint-W1/",
     "e2e": "ng e2e",
-    "http-server": "http-server ./dist/Sprint-W1/ -c-1 -p4281 -a localhost -o",
+    "http-server": "http-server ./dist/sprint-W1/ -c-1 -p4281 -a localhost -o",
     "lint": "ng lint",
     "ng": "ng",
     "pub": "npm run build:pub && npm run push",
