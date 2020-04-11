@@ -1,27 +1,61 @@
-# SprintW1
+# Sprint - W1
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+## Application-structure
 
-## Development server
+Práctica para el sprint de la primera semana, correspondiente a los temas **0-Hello** y **1-Base**.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Objetivos
 
-## Code scaffolding
+- Crear una aplicación para gestionar proyectos.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Sentar las bases de la aplicación.
 
-## Build
+- Por ahora no habrá código funcional específico
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- Libre estética
 
-## Running unit tests
+### Requisitos previos
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Imprescindible: NodeJS versión 10 o superior
 
-## Running end-to-end tests
+- Imprescindible: Angular CLI versión 7 o superior
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Recomendado Editor VSCode
 
-## Further help
+- Recomendado cuenta en GitHub
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- Recomendado Cliente GIT
+
+### Tareas
+
+- [ ] use **Application** with routing
+- [ ] create **CoreModule** for layout
+- [ ] create **HeaderComponent**
+- [ ] create **MainComponent**
+- [ ] create **FooterComponent**
+- [ ] create **LayoutComponent** _exported_
+- [ ] make **LayoutComponent** from  **HeaderComponent** **MainComponent** **FooterComponent**
+- [ ] use **LayoutComponent** on **AppComponent**
+- [ ] run with _npm start_
+- [ ] build with _npm run build:prod_
+- [ ] publish with _npm run pub_
+
+
+### Recursos
+
+Para principiantes en Git:
+[Git - la guía sencilla](http://rogerdudler.github.io/git-guide/index.es.html)
+
+
+### Subid el código a Git y publicad la url del repositorio en la plataforma del curso.
+
+#### OPCIONAL
+
+Para desplegar la aplicación y verla en gitHub:
+
+1- [Configuring a publishing source for GitHub Pages](https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages#publishing-your-github-pages-site-from-a-docs-folder-on-your-master-branch)
+
+2 - Ajustar url en _"build:pub"_ script del _package.json_
+
+
+> Recomendación: Seguir los guiones de las lecciones 0 y 1.
