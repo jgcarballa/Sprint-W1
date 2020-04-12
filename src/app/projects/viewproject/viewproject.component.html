@@ -1,0 +1,8 @@
+<section>
+  <ul *ngFor="let pjLst of projectList">
+    <li *ngIf="pjLst.id == projectId">
+      <span> Proyecto ID: {{ pjLst.id }}</span>
+      <span> Nombre: {{ pjLst.name }}</span>
+    </li>
+</ul>
+</section>
