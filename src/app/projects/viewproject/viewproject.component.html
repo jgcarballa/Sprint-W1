@@ -1,8 +1,7 @@
 <section>
-  <ul *ngFor="let pjLst of projectList">
-    <li *ngIf="pjLst.id == projectId">
-      <span> Proyecto ID: {{ pjLst.id }}</span>
-      <span> Nombre: {{ pjLst.name }}</span>
+  <ul *ngFor="let project of projectList">
+    <li *ngIf="project.id == projectId">
+      <app-viewerproject-form [project]="project"></app-viewerproject-form>
     </li>
 </ul>
 </section>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../projects/models/project';
 import { environment } from 'src/environments/environment';
+import { ProjectserviceService } from '../projectservice.service';
 
 @Component({
   selector: 'app-newproject',
@@ -9,22 +10,30 @@ import { environment } from 'src/environments/environment';
   ]
 })
 export class NewprojectComponent implements OnInit {
-  public project: Project;
-  public projects: Project[] = environment.projects;
-  public numProjects = environment.projects.length - 1;
+  titulo = 'Nuevo proyecto';
+  legend = 'Formulario de Proyecto';
+  numProjects = environment.projects.length - 1;
 
-  constructor() { }
+  public project: Project =
+  {
+    id: this.projectService.countProjects(this.numProjects),
+    name: ''
+  };
+  projects = environment.projects;
+
+  constructor(private projectService: ProjectserviceService) { }
 
   ngOnInit(): void {
-    this.project = {
-      id: this.numProjects + 1,
-      name: ''
-    };
+  }
+  public createProject(event: string){
+    this.project.id = this.projectService.countProjects(this.numProjects);
+    this.project.name = event;
+    this.projectService.createProject(this.project, this.projects);
+    this.project.id = this.projectService.increaseId(this.project);
   }
 
-  public saveProject() {
-    this.projects.push({ ...this.project});
-    this.project.id = this.project.id + 1;
-  }
-
+  /*public saveProject(){
+    this.projectService.createProject(this.project, this.projects);
+    this.project.id = this.projectService.increaseId(this.project);
+  }*/
 }

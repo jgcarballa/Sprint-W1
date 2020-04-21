@@ -1,0 +1,15 @@
+<app-filterprojects-form (filtrarProyectos)="filtrarProyectos($event)"></app-filterprojects-form>
+<section>
+  <h2 for="projectList">Lista de Proyectos :</h2>
+    <ul *ngFor="let pjLst of showProjects">
+      <li>
+        <span> Proyecto ID: {{ pjLst.id }}</span>
+        <span> Nombre: {{ pjLst.name }}</span>
+      </li>
+      <a routerLink="viewproject/{{ pjLst.id }}"
+     routerLinkActive="router-link-active"
+     class="button">
+    <span> Ver proyecto</span>
+  </a>
+  </ul>
+ </section>
