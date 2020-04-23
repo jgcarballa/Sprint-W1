@@ -11,16 +11,15 @@ import { FormGroup } from '@angular/forms';
 })
 export class NewprojectFormComponent implements OnInit {
   @Input () public titulo: string;
-  @Input () public project: Project;
   @Input () public legend: string;
   @Output () public createProject = new EventEmitter<string>();
-
+  projectName: string;
   constructor() { }
 
   ngOnInit(): void {
   }
   public saveProject(){
-    const projectName = this.project.name;
+    const projectName = this.projectName;
     this.createProject.emit(projectName);
   }
 }

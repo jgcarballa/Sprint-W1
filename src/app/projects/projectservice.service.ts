@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Project } from './projects/models/project';
+import { HttpClient } from '@angular/common/http';
+import { share } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -8,19 +10,22 @@ import { Project } from './projects/models/project';
 export class ProjectserviceService {
   project: Project;
   projects: Project[];
+  private projectsApi = 'https://api-base.herokuapp.com/api/pub/projects';
 
-  constructor() { }
-
-  public countProjects = (numprojects: number) => numprojects + 1;
-  public createProject = (newproject: Project, projects: Project[]) => projects.push({...newproject});
-  public increaseId = (projectid: any) => projectid.id + 1;
-  public numProjects = () => environment.projects.length;
-  public saveProject(project: Project, projects: Project[]){
-    return this.createProject(project, projects);
-  }
+  constructor(private httpClient: HttpClient) {
+   }
 
   getProjects() {
-    return environment.projects;
+    return this.httpClient.get<any>(this.projectsApi);
   }
 
+  postProjects(project: Project) {
+    return this.httpClient.post(this.projectsApi, project).subscribe();
+  }
+  cargaProyectos() {
+    environment.projects.forEach(project => this.postProjects(project));
+  }
+  borrarProyectos() {
+    this.httpClient.delete(this.projectsApi).subscribe();
+  }
 }

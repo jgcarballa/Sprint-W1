@@ -6,4 +6,6 @@
   </a>
 </header>
 <router-outlet></router-outlet>
-<app-projectlist [projectList]="projectList"></app-projectlist>
+<div *ngIf="projectList$ | async as project">
+  <app-projectlist [projectList]="project"></app-projectlist>
+</div>

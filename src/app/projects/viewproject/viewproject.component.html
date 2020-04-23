@@ -1,7 +1,9 @@
 <section>
-  <ul *ngFor="let project of projectList">
+  <div *ngIf="projectList$ | async as projects">
+  <ul *ngFor="let project of projects">
     <li *ngIf="project.id == projectId">
       <app-viewerproject-form [project]="project"></app-viewerproject-form>
     </li>
-</ul>
+  </ul>
+</div>
 </section>

@@ -10,6 +10,7 @@ import { ProjectlistComponent } from './projectlist/projectlist.component';
 import { ViewerprojectFormComponent } from './viewerproject-form/viewerproject-form.component';
 import { NewprojectFormComponent } from './newproject-form/newproject-form.component';
 import { ProjectserviceService } from './projectservice.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ProjectserviceService } from './projectservice.service';
   imports: [
     CommonModule,
     ProjectsRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     ProjectserviceService

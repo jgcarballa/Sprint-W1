@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Project } from '../projects/models/project';
+import { ProjectserviceService } from '../projectservice.service';
 
 @Component({
   selector: 'app-projectlist',
@@ -12,7 +13,7 @@ export class ProjectlistComponent implements OnInit {
   @Input () public projectList: Project[];
   public showProjects: Project[];
 
-  constructor() { }
+  constructor(private projectService: ProjectserviceService) { }
 
   ngOnInit() {
     this.showProjects = this.projectList;
@@ -20,7 +21,6 @@ export class ProjectlistComponent implements OnInit {
 
   filtrarProyectos(event: string) {
     const minusculas = event.toLowerCase();
-    console.log(this.projectList.filter(p =>p.name.toLowerCase().includes(minusculas)));
     this.showProjects = this.projectList.filter(p => p.name.toLowerCase().includes(minusculas));
   }
 }

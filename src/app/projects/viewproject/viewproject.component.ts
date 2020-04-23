@@ -3,6 +3,7 @@ import { Project } from '../projects/models/project';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { ProjectserviceService } from '../projectservice.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-viewproject',
@@ -12,14 +13,14 @@ import { ProjectserviceService } from '../projectservice.service';
 })
 export class ViewprojectComponent implements OnInit {
   public projectId: number;
-  public projectList: Project[];
+  public projectList$: Observable <Project[]>;
 
   constructor(activateRoute: ActivatedRoute, private projectService: ProjectserviceService) {
     this.projectId = activateRoute.snapshot.params.id;
   }
 
   ngOnInit(): void {
-    this.projectList = this.getProjects();
+    this.projectList$ = this.getProjects();
   }
 
   public getProjects(){

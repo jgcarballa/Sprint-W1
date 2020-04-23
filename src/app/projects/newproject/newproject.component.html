@@ -1,4 +1,10 @@
-<app-newproject-form [titulo]="titulo" [project]="project" [legend]="legend" (createProject)="createProject($event)"></app-newproject-form>
+<div *ngIf="projects$ | async as projects; else noProjectCreated">
+  <app-newproject-form [titulo]="titulo"  [legend]="legend" (createProject)="createProject($event, projects.length)"></app-newproject-form>
+</div>
+<ng-template #noProjectCreated>
+  <app-newproject-form [titulo]="titulo"  [legend]="legend" (createProject)="createProject($event,0)"></app-newproject-form>
+</ng-template>
+
 <!--<form>
   <fieldset>
     <legend>{{ legend }}</legend>
