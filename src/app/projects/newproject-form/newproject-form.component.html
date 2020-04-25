@@ -1,11 +1,12 @@
 <h2>{{ titulo }}</h2>
-<form>
+<form [formGroup]="formGroup">
   <fieldset>
-    <legend>{{ legend }}</legend>
+    <legend>Formulario de Proyecto</legend>
     <section>
       <label for ="name">Nombre</label>
-      <input name="name" type="text" [(ngModel)]="projectName" placeholder="Nombre del proyecto" />
+      <input name="name" type="text" formControlName="projectName" placeholder="Nombre del proyecto" />
+      <span>{{ getError('projectName') }}</span><br>
     </section>
   </fieldset>
-  <input value="Guardar" type="submit" (click)="saveProject()" />
+  <input value="Guardar" type="submit" (click)="saveProject()" [disabled]='formGroup.invalid' />
 </form>

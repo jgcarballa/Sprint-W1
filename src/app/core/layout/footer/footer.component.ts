@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NotificationsStoreService } from 'src/app/projects/notifications-store.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class FooterComponent implements OnInit {
+  public notification = '';
+  public notitication$;
+  public requestmsj;
 
-  constructor() { }
+  constructor(private notificationsStore: NotificationsStoreService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.notitication$ = this.notificationsStore.select$().subscribe(n => n.forEach(r => {
+      this.requestmsj = r.toString();
+    }));
   }
-
 }

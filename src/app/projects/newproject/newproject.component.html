@@ -4,14 +4,3 @@
 <ng-template #noProjectCreated>
   <app-newproject-form [titulo]="titulo"  [legend]="legend" (createProject)="createProject($event,0)"></app-newproject-form>
 </ng-template>
-
-<!--<form>
-  <fieldset>
-    <legend>{{ legend }}</legend>
-    <section>
-      <label for ="name">Nombre</label>
-      <input name="name" type="text" [(ngModel)]="project.name" placeholder="Nombre del proyecto" />
-    </section>
-  </fieldset>
-  <input value="Guardar" type="submit" (click)="saveProject()" />
-</form>-->
