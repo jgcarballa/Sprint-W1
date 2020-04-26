@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "practica4-jgcarballa": {
+    "Sprint-W1": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -39,7 +39,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/practica4-jgcarballa",
+            "outputPath": "dist/Sprint-W1",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -52,6 +52,7 @@
             "styles": [
               "src/styles.css",
               "./node_modules/mini.css/dist/mini-default.min.css"
+
             ],
             "scripts": []
           },
@@ -89,18 +90,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "practica4-jgcarballa:build"
+            "browserTarget": "Sprint-W1:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "practica4-jgcarballa:build:production"
+              "browserTarget": "Sprint-W1:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "practica4-jgcarballa:build"
+            "browserTarget": "Sprint-W1:build"
           }
         },
         "test": {
@@ -137,16 +138,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "practica4-jgcarballa:serve"
+            "devServerTarget": "Sprint-W1:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "practica4-jgcarballa:serve:production"
+              "devServerTarget": "Sprint-W1:serve:production"
             }
           }
         }
       }
-    }
-  },
-  "defaultProject": "practica4-jgcarballa"
+    }},
+  "defaultProject": "Sprint-W1"
 }
