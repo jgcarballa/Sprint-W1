@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styles: []
 })
 export class AppComponent {
-  title = 'Sprint-W1';
+  title = 'practica4-jgcarballa';
 }
