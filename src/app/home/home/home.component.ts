@@ -1,28 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { ProjectserviceService } from 'src/app/projects/projectservice.service';
 import { Observable } from 'rxjs';
 import { Project } from 'src/app/projects/projects/models/project';
-import { ProjectserviceService } from 'src/app/projects/projectservice.service';
+import { map, share, tap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styles: []
+  styles: [
+  ]
 })
 export class HomeComponent implements OnInit {
-  projects$: Observable<Project[]>;
+  projects$: Observable <Project[]>;
   projects: any;
 
-  constructor(private projectService: ProjectserviceService) {}
+  constructor(private projectService: ProjectserviceService) { }
 
   ngOnInit() {
     this.numProjects();
   }
 
-  numProjects() {
+  numProjects(){
     this.projects$ = this.projectService.getProjects();
   }
 
-  loadProjects() {
+  loadProjects(){
     this.projectService.cargaProyectos();
   }
 
