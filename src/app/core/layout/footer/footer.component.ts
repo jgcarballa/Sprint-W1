@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NotificationsStoreService } from 'src/app/projects/notifications-store.service';
+import { NotificationsStoreService } from 'src/app/notification/notifications-store.service';
 
 @Component({
   selector: 'app-footer',

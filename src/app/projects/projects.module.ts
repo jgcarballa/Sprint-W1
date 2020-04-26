@@ -11,7 +11,7 @@ import { ViewerprojectFormComponent } from './viewerproject-form/viewerproject-f
 import { NewprojectFormComponent } from './newproject-form/newproject-form.component';
 import { ProjectserviceService } from './projectservice.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ProjectsInterceptorService } from '../projects/projects-interceptor.service';
+import { ProjectsInterceptorService } from '../notification/projects-interceptor.service';
 
 @NgModule({
   declarations: [

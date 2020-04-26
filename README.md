@@ -1,61 +1,50 @@
-# Sprint - W1
+# Práctica para curso de introducción a Angular
 
-## Application-structure
+Crear una aplicación para un mantenimiento básico.
 
-Práctica para el sprint de la primera semana, correspondiente a los temas **0-Hello** y **1-Base**.
+La temática es sencilla, una lista de proyectos sólo con su nombre.
 
-### Objetivos
-
-- Crear una aplicación para gestionar proyectos.
-
-- Sentar las bases de la aplicación.
-
-- Por ahora no habrá código funcional específico
-
-- Libre estética
-
-### Requisitos previos
-
-- Imprescindible: NodeJS versión 10 o superior
-
-- Imprescindible: Angular CLI versión 7 o superior
-
-- Recomendado Editor VSCode
-
-- Recomendado cuenta en GitHub
-
-- Recomendado Cliente GIT
-
-### Tareas
-
-- [ ] use **Application** with routing
-- [ ] create **CoreModule** for layout
-- [ ] create **HeaderComponent**
-- [ ] create **MainComponent**
-- [ ] create **FooterComponent**
-- [ ] create **LayoutComponent** _exported_
-- [ ] make **LayoutComponent** from  **HeaderComponent** **MainComponent** **FooterComponent**
-- [ ] use **LayoutComponent** on **AppComponent**
-- [ ] run with _npm start_
-- [ ] build with _npm run build:prod_
-- [ ] publish with _npm run pub_
+Necesitamos
+- un formulario de alta
+- un formulario de consulta
+- una tabla de listado
+- un página para ver un proyecto concreto
+- un contador total en el dashborad
 
 
-### Recursos
+## TrainingProjects
 
-Para principiantes en Git:
-[Git - la guía sencilla](http://rogerdudler.github.io/git-guide/index.es.html)
+- [Sprint W1 - Application structure](/sprint-week-1.md)
+- [Sprint W2 - Routes and layout](/sprint-week-2.md)
+- [Sprint W3 - Data Management](/sprint-week-3.md)
+- [Sprint W4 - Http communications](/sprint-week-4.md)
+- [Sprint W5 - User experience](/sprint-week-5.md)
+
+## Habilitación de GitHubPages
+
+La publicación en github pages requiere varios pasos:
+
+1 - Habilitar en github la carpeta `docs` como servidor estático [Instrucciones](https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages#publishing-your-github-pages-site-from-a-docs-folder-on-your-master-branch)
+2 - Ajustar las url  con `--base-href` con la url obtenida en el paso 1
+3 - Compilar la aplicación en modo producción con destino a docs
+
+En la aplicación de ejemplo os propongo unos scripts de ayuda.
+- "pub": "npm run build:pub && npm run push"
+
+Es un script maestro que invoca a otros dos auxiliares
+- "build:pub": "ng build --prod --output-path docs --base-href https://trainingit-introangular-ed3.github.io/angular-board/",
+
+> Sustituye la `--base-href` con la dirección más apropiada a tu repositorio
+
+Este es el script de compilación. Determina la carpeta destino y asigna la url según tu repositorio
+- "push": "git add * && git commit -m 'pub' && git push",
+
 
 
 ### Subid el código a Git y publicad la url del repositorio en la plataforma del curso.
 
-#### OPCIONAL
+Cuando todo funcione, incluso puedes asignar la url obtenida a la descripción del propio repositorio.
+Solo hay que editar la descripción del proyecto en su página de github y te permite asignarle una página web.
 
-Para desplegar la aplicación y verla en gitHub:
-
-1- [Configuring a publishing source for GitHub Pages](https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages#publishing-your-github-pages-site-from-a-docs-folder-on-your-master-branch)
-
-2 - Ajustar url en _"build:pub"_ script del _package.json_
-
-
-> Recomendación: Seguir los guiones de las lecciones 0 y 1.
+Por ejemplo en https://github.com/trainingit-introangular-ed2/angular-board
+Hay un enlace a https://trainingit-introangular.github.io/angular-board/
