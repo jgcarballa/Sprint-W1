@@ -1,6 +1,6 @@
 {
   "name": "practica4-jgcarballa",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "scripts": {
     "build:prod": "ng build --prod",
     "build:pub": "ng build --prod --output-path docs --base-href https://introangular4.github.io/practica4-jgcarballa/",
